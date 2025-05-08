@@ -21,14 +21,14 @@ with app.app_context():
 @app.route('/products',methods=['GET'])
 def get_products():
     products=Product.query.all()
-    res=[]
+    result=[]
     for p in products:
         res.append({'id':p.id,
                     'name':p.name,
                     'cost_price':p.cost_price,
                     'selling_price':p.selling_price
                     })
-    return jsonify(res)
+    return jsonify(result)
     
 
 #adding a new product to the database
